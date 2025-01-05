@@ -13,11 +13,19 @@
         z-index: 1;
         width: 100%;
         text-align: center;
+        padding: 0 1rem; //Centrer le texte
         
         h1 {
             color: $white-color;
             font-size: $font-size-48;
             font-weight: $font-weight-700;
+
+            @media (max-width: $mobile) {
+                font-weight: $font-weight-700;
+                font-size: $font-size-24;
+                text-align: start;
+                padding: 0 1rem;
+            }
         }
     }
 }
@@ -25,11 +33,15 @@
 .banner-image {
     img {
         width: 100%;
-        max-height: 14rem; /* 223px */
-        height: auto;
+        height: 14rem; 
         object-fit: cover;
         border-radius: 1.5rem;
         filter: brightness(40%);
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+        @media (max-width: $mobile) {
+            height: 111px;
+            border-radius: 0.625rem;
+        }
     }
 }

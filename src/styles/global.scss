@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "./variables.scss";
 /*Breakpoints*/
-$mobile: 768px;
-$tablet: 1024px;
+$mobile: 576px; //768px
+$tablet: 768px; //1024px
 $desktop: 1440px;
 
 * {
@@ -10,4 +10,13 @@ $desktop: 1440px;
   padding: 0;
   box-sizing: border-box;
   font-family: $font-family;
+}
+
+.main-container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

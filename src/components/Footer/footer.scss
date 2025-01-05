@@ -14,7 +14,8 @@ footer {
     gap: 1.25rem; /* 20px */
     //padding: 2rem 1rem 0; /* 32px 16px 0 */
     padding: 3rem;
-    margin-top: 2.5rem; /* 40px */
+    //margin-top: 2.5rem; /* 40px */
+    margin-top: auto; // pour que le footer soit en bas
 
     p {
         text-align: center;
@@ -26,6 +27,7 @@ footer {
         gap: 0.5rem;
         p {
             font-size: $font-size-12;
+            font-weight: $font-weight-500;
         }
     }
 }
