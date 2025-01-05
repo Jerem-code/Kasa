@@ -1,0 +1,73 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.header {
+    /* max-width: 1240px;
+    max-height: 68px; */
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 2rem 3rem 0 3rem; /* 32px 48px 0 48px */
+
+    // Responsive mobile pour le header
+    
+    @media (max-width: $mobile) {
+        //padding: 1rem 1.5rem 0 1.5rem; CHOISIR UN DES DEUX
+        padding: 1rem 1rem 0 1rem;
+        //margin: 1.5rem auto 2rem auto;
+        margin: 0 auto;
+    }
+    // Fin du responsive mobile pour le header
+
+    .logo {
+        max-width: 13rem; /* 210px */
+        height: auto;
+
+        @media (max-width: $tablet) {
+            max-width: 10rem; /* 160px */
+        }
+
+        @media (max-width: $mobile) {
+            max-width: 7rem; /* 112px */
+        }
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        font-size: $font-size-24;
+        ul {
+            display: flex;
+            gap: 3.5625rem; /* 57px */
+            list-style: none;
+            margin-top: 1.0625rem; /* 17px */
+            padding: 0;
+            
+            li {
+                margin: 0;
+                a {
+                    text-decoration: none;
+                    color: $black-color;
+                    position: relative;
+                    
+                    &.active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $mobile) {
+            font-size: $font-size-12;
+            ul {
+                gap: 1.5rem;
+                li {
+                    a {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
