@@ -3,7 +3,7 @@ import './card.scss';
 
 function Card({ id, title, cover }) {
     return (
-        <Link to={`/logement/${id}`} className="card">
+        <Link to={`/accommodation/${id}`} className="card">
             <img src={cover} alt={title} />
             <h2>{title}</h2>
         </Link>
