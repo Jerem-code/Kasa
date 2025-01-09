@@ -1,7 +1,9 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
+import Carousel from '../../components/Carousel/carousel';
 import accommodations from '../../datas/logements.json';
-import './accommodation.scss';
+import './accomodation.scss';
+import Collapse from '../../components/Collapse/collapse';
 
 function Accommodation() {
     const { id } = useParams();
@@ -13,8 +15,8 @@ function Accommodation() {
 
     return (
         <div className="accommodation-container">
-            <div className="main-image">
-                <img src={accommodation.pictures[0]} alt={accommodation.title} />
+            <div className="accommodation-container">
+                <Carousel pictures={accommodation.pictures} />
             </div>
             
             <div className="accommodation-info">
@@ -45,18 +47,14 @@ function Accommodation() {
                 </div>
 
                 <div className="description-equipment">
-                    <div className="description">
-                        <h2>Description</h2>
-                        <p>{accommodation.description}</p>
-                    </div>
-                    <div className="equipment">
-                        <h2>Équipements</h2>
-                        <ul>
-                            {accommodation.equipments.map((equipment, index) => (
-                                <li key={index}>{equipment}</li>
-                            ))}
-                        </ul>
-                    </div>
+                    <Collapse 
+                        title="Description" 
+                        content={accommodation.description} 
+                    />
+                    <Collapse 
+                        title="Équipements" 
+                        content={accommodation.equipments} 
+                    />
                 </div>
             </div>
         </div>
