@@ -4,13 +4,16 @@ import Carousel from '../../components/Carousel/carousel';
 import accommodations from '../../datas/logements.json';
 import './accomodation.scss';
 import Collapse from '../../components/Collapse/collapse';
+import ErrorComponent from '../../components/Error/error.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 function Accommodation() {
     const { id } = useParams();
     const accommodation = accommodations.find(acc => acc.id === id);
 
     if (!accommodation) {
-        return <Navigate to="/404" />;
+        return <ErrorComponent />;
     }
 
     return (
@@ -39,7 +42,7 @@ function Accommodation() {
                         <div className="rating">
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <span key={star} className={star <= parseInt(accommodation.rating) ? 'star active' : 'star'}>
-                                    ★
+                                    <FontAwesomeIcon icon={faStar} />
                                 </span>
                             ))}
                         </div>
