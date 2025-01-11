@@ -33,8 +33,15 @@ function Carousel({ pictures }) {
             <button onClick={goToNext} className="carousel-button next">
                 <img src={arrow_forward} alt="Suivant" />
             </button>
-            <div className="carousel-counter">
-                {currentIndex + 1}/{totalPictures}
+
+            <div className="carousel-dots">
+                {pictures.map((_, index) => (
+                    <span 
+                        key={index} 
+                        className={`dot ${index === currentIndex ? 'active' : ''}`}
+                        onClick={() => setCurrentIndex(index)}
+                    />
+                ))}
             </div>
         </div>
     );

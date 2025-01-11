@@ -37,6 +37,29 @@
             right: 23px;
         }
     }
+//Ajout de dots pour indiquer la position de l'image affichée
+    .carousel-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 2;
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &.active {
+                background-color: $white-color;
+            }
+        }
+    }
 
     @media (max-width: $mobile) {
         height: 255px;
@@ -55,6 +78,16 @@
 
             &.next {
                 right: 6px;
+            }
+        }
+//Responsive dots
+        .carousel-dots {
+            bottom: 10px;
+            gap: 6px;
+
+            .dot {
+                width: 6px;
+                height: 6px;
             }
         }
     }
