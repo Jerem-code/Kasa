@@ -19,6 +19,19 @@ function Carousel({ pictures }) {
         return null;
     }
 
+    // Ne pas afficher les contrôles s'il n'y a qu'une seule image
+    if (pictures.length === 1) {
+        return (
+            <div className="carousel single-image">
+                <img 
+                    src={pictures[0]} 
+                    alt="Photo 1" 
+                    className="carousel-image"
+                />
+            </div>
+        );
+    }
+
     return (
         <div className="carousel">
             <img 
@@ -34,14 +47,8 @@ function Carousel({ pictures }) {
                 <img src={arrow_forward} alt="Suivant" />
             </button>
 
-            <div className="carousel-dots">
-                {pictures.map((_, index) => (
-                    <span 
-                        key={index} 
-                        className={`dot ${index === currentIndex ? 'active' : ''}`}
-                        onClick={() => setCurrentIndex(index)}
-                    />
-                ))}
+            <div className="carousel-counter">
+                {currentIndex + 1}/{totalPictures}
             </div>
         </div>
     );

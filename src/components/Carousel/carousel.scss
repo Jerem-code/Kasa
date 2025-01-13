@@ -37,29 +37,22 @@
             right: 23px;
         }
     }
-//Ajout de dots pour indiquer la position de l'image affichée
-    .carousel-dots {
+
+    .carousel-counter {
         position: absolute;
-        bottom: 20px;
+        bottom: 25px;
         left: 50%;
         transform: translateX(-50%);
-        display: flex;
-        gap: 8px;
+        color: $white-color;
+        font-size: $font-size-18;
+        font-weight: $font-weight-500;
         z-index: 2;
+    }
 
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-
-            &.active {
-                width: 24px;
-                border-radius: 4px;
-                background-color: $white-color;
-            }
+    &.single-image {
+        .carousel-button,
+        .carousel-counter {
+            display: none;
         }
     }
 
@@ -82,19 +75,10 @@
                 right: 6px;
             }
         }
-//Responsive dots
-        .carousel-dots {
-            bottom: 10px;
-            gap: 6px;
 
-            .dot {
-                width: 6px;
-                height: 6px;
-
-                &.active {
-                    width: 20px;
-                }
-            }
+        .carousel-counter {
+            bottom: 15px;
+            font-size: $font-size-14;
         }
     }
 }
