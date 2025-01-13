@@ -53,9 +53,11 @@
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.5);
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
 
             &.active {
+                width: 24px;
+                border-radius: 4px;
                 background-color: $white-color;
             }
         }
@@ -88,6 +90,10 @@
             .dot {
                 width: 6px;
                 height: 6px;
+
+                &.active {
+                    width: 20px;
+                }
             }
         }
     }
