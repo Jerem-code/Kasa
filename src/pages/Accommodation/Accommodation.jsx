@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Carousel from '../../components/Carousel/carousel';
 import accommodations from '../../datas/logements.json';
 import './accomodation.scss';
