@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import Home from './pages/Home/Home.jsx'
 import Header from './components/Header/header.jsx'
 import Footer from './components/Footer/footer.jsx'
